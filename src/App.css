@@ -79,6 +79,16 @@ a, a:hover, a:focus {
   
 }
 
+.introduction{
+  background-color: rgb(247, 242, 242);
+}
+
+.about  {
+  text-align: center;
+  padding-left: 260px;
+  padding-top: 100px;
+}
+
 .navbar li {
   padding-left: 3cm;
   padding-right: 3cm;
@@ -101,6 +111,8 @@ a, a:hover, a:focus {
   border-bottom: 3px solid #29b6f6;
   transition: border-bottom .5s ease-in-out;
 }
+
+
 
 .filterForm{
   margin-top: 1cm;

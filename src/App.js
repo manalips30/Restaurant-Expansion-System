@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import TransactionHome from './TransactionHome';
-import ServiceRequest from './ServiceRequest';
+import Home from './Home';
+import Analysis from './Analysis';
 import {BrowserRouter, Router, Switch, Route, NavLink, HashRouter} from 'react-router-dom';
-import TransactionDetail from './TransactionDetail';
+import About from './About';
 
 
 class App extends Component {
@@ -27,18 +27,18 @@ class App extends Component {
                     <a href="/" >Home</a>
                 </li>
                 <li>
-                  <NavLink to="/serviceRequest" activeClassName="navbar__link--active" exact>Analysis</NavLink>
+                  <NavLink to="/analysis" activeClassName="navbar__link--active" exact>Analysis</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/routes"  activeClassName="navbar__link--active" exact>About</NavLink>
+                    <NavLink to="/about"  activeClassName="navbar__link--active" exact>About</NavLink>
                 </li>
             </ul>
             </nav>
             
               <Switch>
-                <Route path="/" component={TransactionHome} exact/>
-                <Route path="/serviceRequest" component={ServiceRequest} exact />
-                <Route path="/transactionDetail/:trans" component={TransactionDetail} exact/>
+                <Route path="/" component={Home} exact/>
+                <Route path="/analysis" component={Analysis} exact />
+                <Route path="/about" component={About} exact />
               </Switch>
               
         </div>

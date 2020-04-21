@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class FilterFormServReq extends Component {
+class RestaurantDetails extends Component {
 
   constructor(props) {
     super(props);
@@ -16,60 +16,32 @@ class FilterFormServReq extends Component {
       cost: "",
       restaurantType: "",
       sqarea: "",
-      propertyType: ""
-
+      propertyType: "",
+      temp_response:{
+        status:"",
+        response:""}
     }
     this.handleUserInput = this.handleUserInput.bind(this)
   }
 
-  async addRequest() {
-    console.log(this.state.routeId, this.state.routeInfo);
-    
-    // try {
-    //   await fetch(window.$url + "/addDropdown", {
-    //     method: "POST",
-    //     mode: "cors",
-    //     headers: {
-    //       Accept: "application/json",
-    //       "Content-type": "application/json",
-    //       Authorization: "Bearer " + cookies.get("usertoken")
-    //     },
-
-    //     body: JSON.stringify({
-    //       dropdown_value: this.state.routeId,
-    //       display_name: this.state.routeInfo,
-    //       dropdown_type: "route"
-    //     })
-    //   })
-    //     .then(response => response.json())
-    //     .then(result => this.setState({ addRouteResult: result }))
-    //     .catch(error => this.setState({ error: error }));
-    // } catch (e) {
-    //   this.setState({ error: e });
-    //   console.log(e);
-    // }
-
-    // console.log("addRouteResult", this.state.addRouteResult);
-    // if (this.state.addRouteResult === "") {
-    //   this.setState({ message: "Added successfully!" });
-    // }
-    // else if (this.state.addRouteResult.status === 500) {
-    //   this.setState({ message: "Id and Value should be Unique" });
-    // } else {
-    //   this.setState({ message: this.state.addRouteResult });
-    // }
-  }
+  handleOnSubmit = async() => {
+    await fetch('http://localhost:8080/helloworld')
+    .then(res => res.json())
+    .then((data) => {
+      console.log("data",data)
+      this.setState({ temp_response: data })
+      console.log("temp_response",this.state.temp_response)
+    })
+    .catch(console.log)  
+  };
 
   submitForm = (e) => {
     e.preventDefault();
-    //this.props.handleOnClick(this.state);
+    this.handleOnSubmit(this.state);
     console.log('state',this.state)
   }
 
   handleUserInput = (e) => {
-    //const name = e.target.name;
-    //const value = e.target.value;
-    //this.setState({ [name]: value })
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -237,4 +209,4 @@ class FilterFormServReq extends Component {
   }
 }
 
-export default FilterFormServReq;
+export default RestaurantDetails;

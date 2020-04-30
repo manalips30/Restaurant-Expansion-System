@@ -58,15 +58,15 @@ class Analysis extends React.Component {
   }
 
   componentDidMount = async () => {
-    await fetch(`http://localhost:8080/analysis?area1=Springville&area2=Callodine&area3=Heath&zipcode1=14226&zipcode2=14226&zipcode3=14227`)
-      .then(res => res.json())
-      .then((data) => {
-        console.log("analysis_data", data)
-        this.setState({ temp_response: data })
-        console.log("temp_response", this.state.temp_response)
-      })
-      .catch(console.log)
-    this.Processing()
+    // await fetch(`http://localhost:8080/analysis?area1=Springville&area2=Callodine&area3=Heath&zipcode1=14226&zipcode2=14226&zipcode3=14227`)
+    //   .then(res => res.json())
+    //   .then((data) => {
+    //     console.log("analysis_data", data)
+    //     this.setState({ temp_response: data })
+    //     console.log("temp_response", this.state.temp_response)
+    //   })
+    //   .catch(console.log)
+    // this.Processing()
   }
 
   Processing = () => {

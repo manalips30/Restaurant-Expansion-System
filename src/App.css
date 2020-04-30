@@ -89,6 +89,16 @@ a, a:hover, a:focus {
   padding-top: 100px;
 }
 
+.title {
+  margin-top: 40px;
+  padding-left: 250px;
+}
+
+.rowC{
+  display:flex; 
+  flex-direction:row;
+}
+
 .navbar li {
   padding-left: 3cm;
   padding-right: 3cm;

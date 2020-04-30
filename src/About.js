@@ -1,7 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, NavLink, Redirect,useParams} from 'react-router-dom';
 
-class TransactionDetail extends React.Component {
+class About extends React.Component {
     
     render() {
         return(
@@ -17,4 +16,4 @@ class TransactionDetail extends React.Component {
     }
 }
 
-export default TransactionDetail;
+export default About;

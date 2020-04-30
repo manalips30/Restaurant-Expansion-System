@@ -12,7 +12,7 @@ class Home extends Component {
                     <form>
                         <h6>Planning to start an eatery in the city? Confused about it's location? </h6>
                         <h6>Enter the details of the restaurant and</h6>
-                        <h6>the perspective areas you have in mind to get a comparison about them </h6>
+                        <h6>the prospective areas you have in mind to get a comparison about them </h6>
                         <h6>along with new location suggestions!</h6>
                     </form>
 

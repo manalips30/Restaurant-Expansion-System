@@ -30,19 +30,17 @@ class RestaurantDetails extends Component {
     }
     this.handleUserInput = this.handleUserInput.bind(this)
   }
-
-  //http://localhost:8080/findBestAreas?area1=${this.state.area1}&area2=${this.state.area2}&area3=${this.state.area3}&zipcode1=${this.state.zip1}&zipcode2=${this.state.zip2}&zipcode3=${this.state.zip3}&city=${this.state.city}&country=US&state=${this.state.kingdom}&restaurantType=${this.state.restaurantType}&area=${this.state.sqarea}&propertyType=${this.state.propertyType}&cuisine=${this.state.cuisine}&cost=${this.state.cost}
   
   handleOnSubmit = async () => {
-    // await fetch(`https://dbms-server.herokuapp.com/findBestAreas?area1=${this.state.area1}&area2=${this.state.area2}&area3=${this.state.area3}&zipcode1=${this.state.zip1}&zipcode2=${this.state.zip2}&zipcode3=${this.state.zip3}&city=${this.state.city}&country=US&state=${this.state.kingdom}&restaurantType=${this.state.restaurantType}&area=${this.state.sqarea}&propertyType=${this.state.propertyType}&cuisine=${this.state.cuisine}&cost=${this.state.cost}`)
-    //   .then(res => res.json())
-    //   .then((data) => {
-    //     console.log("data", data)
-    //     this.setState({ temp_response: data })
-    //     console.log("temp_response", this.state.temp_response)
-    //   })
-    //   .catch(console.log)
-    // this.setState({ showLocations: true })
+    await fetch(`https://dbms-server.herokuapp.com/findBestAreas?area1=${this.state.area1}&area2=${this.state.area2}&area3=${this.state.area3}&zipcode1=${this.state.zip1}&zipcode2=${this.state.zip2}&zipcode3=${this.state.zip3}&city=${this.state.city}&country=US&state=${this.state.kingdom}&restaurantType=${this.state.restaurantType}&area=${this.state.sqarea}&propertyType=${this.state.propertyType}&cuisine=${this.state.cuisine}&cost=${this.state.cost}`)
+      .then(res => res.json())
+      .then((data) => {
+        console.log("data", data)
+        this.setState({ temp_response: data })
+        console.log("temp_response", this.state.temp_response)
+      })
+      .catch(console.log)
+    this.setState({ showLocations: true })
   };
 
   submitForm = (e) => {

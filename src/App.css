@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.container {
+  padding: 0;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -12,13 +16,13 @@
   min-width: 300px;
   max-width: 300px;
   min-height: 100vh;
-  background: #7386D5;
+  background: #3e4250;
   color: #fff;
 }
  
 .sidebar-header {
   padding: 50px;
-  background: #6d7fcc;
+  background: #3e4250;
 }
 
 #sidebar ul{
@@ -42,7 +46,7 @@
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #3e4250;
 }
 
 @media (max-width: 768px) {
@@ -81,6 +85,11 @@ a, a:hover, a:focus {
 
 .introduction{
   background-color: rgb(247, 242, 242);
+  height: 75px;
+}
+.info {
+  font-weight: 100;
+  padding-top: 12px;
 }
 
 .about  {

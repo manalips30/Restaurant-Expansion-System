@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink, Redirect, Link } from 'react-router-dom';
-import Locations from './Locations';
-import Analysis from './Analysis';
+import { Redirect } from 'react-router-dom';
+import { withRouter } from "react-router";
+
 
 class RestaurantDetails extends Component {
 
@@ -44,19 +44,20 @@ class RestaurantDetails extends Component {
   };
 
   submitForm = (e) => {
+    const {area1, area2, area3, zip1, zip2, zip3, city, kingdom} = this.state;
+    const querystring = `?area1=${area1}&area2=${area2}&area3=${area3}&zipcode1=${zip1}&zipcode2=${zip2}&zipcode3=${zip3}&city=${city}&country=US&state=${kingdom}&restaurantType=${this.state.restaurantType}&area=${this.state.sqarea}&propertyType=${this.state.propertyType}&cuisine=${this.state.cuisine}&cost=${this.state.cost}\`)`
     e.preventDefault();
-    this.handleOnSubmit(this.state);
-    console.log('state', this.state)
-  }
+
+      const link = document.createElement("a");
+      link.setAttribute("href", `analysis${querystring}`);
+      link.click();
+  };
 
   handleUserInput = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />
-    }
     return (
       <div className="container-fluid login-container w-75">
         <div className="filterForm">
@@ -152,9 +153,9 @@ class RestaurantDetails extends Component {
                   //value="{this.state.kingdom}"
                   onChange="{this.handleUserInput}">
                   <option selected>State</option>
-                  <option>New York</option>
-                  <option>California</option>
-                  <option>Seattle</option>
+                  <option>NY</option>
+                  <option>CA</option>
+                  <option>TX</option>
                 </select>
               </div>
             </div>
@@ -272,4 +273,4 @@ class RestaurantDetails extends Component {
   }
 }
 
-export default RestaurantDetails;
+export default withRouter(RestaurantDetails);
